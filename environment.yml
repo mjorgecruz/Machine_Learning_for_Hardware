@@ -1,0 +1,27 @@
+name: geospatial
+
+channels:
+ - conda-forge
+ - pytorch
+ - defaults
+
+dependencies:
+  - python=3.9
+  - numpy
+  - pandas
+  - scipy
+  - jupyterlab
+  - matplotlib
+  - jupyter
+  - nb_conda
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8
+  - tensorflow-gpu
+  - cudatoolkit
+  - cudnn
+  - scikit-learn
+  - seaborn
+  - plotly
+  - ipywidgets
