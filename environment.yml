@@ -3,6 +3,7 @@ name: geospatial
 channels:
  - conda-forge
  - pytorch
+ - nvidia
  - defaults
 
 dependencies:
@@ -14,13 +15,11 @@ dependencies:
   - matplotlib
   - jupyter
   - nb_conda
-  - pytorch
-  - torchvision
-  - torchaudio
-  - pytorch-cuda=11.8
+  - pytorch::pytorch
+  - pytorch::torchvision
+  - pytorch::torchaudio
+  - pytorch::pytorch-cuda=11.8
   - tensorflow-gpu
-  - cudatoolkit
-  - cudnn
   - scikit-learn
   - seaborn
   - plotly
