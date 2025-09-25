@@ -10,6 +10,8 @@ A Docker-based development environment for machine learning applications in hard
 - Git
 
 ### Setup
+0. **Install the NVIDIA Container Toolkit**
+   https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
 
 1. **Clone the repository**
    ```bash
@@ -30,12 +32,12 @@ A Docker-based development environment for machine learning applications in hard
      # get docker container_id
      sudo docker ps
      # get token
-     sudo docker exec -it <container_id> conda run -n geospatial jupyter notebook list
+     sudo docker exec -it <container_id> conda run -n ml_learning jupyter notebook list
      ```
 
 ## Environment
 
-The project uses a conda environment called `geospatial` with the following packages:
+The project uses a conda environment called `ml_learning` with the following packages:
 
 ### Core Libraries
 - **Python 3.9**

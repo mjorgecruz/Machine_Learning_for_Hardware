@@ -1,4 +1,4 @@
-name: geospatial
+name: ml_learning
 
 channels:
  - conda-forge
@@ -24,3 +24,6 @@ dependencies:
   - seaborn
   - plotly
   - ipywidgets
+  - pip
+  - pip:
+    - turicreate

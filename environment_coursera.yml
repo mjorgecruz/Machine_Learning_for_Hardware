@@ -1,0 +1,29 @@
+name: ml_learning
+
+channels:
+ - conda-forge
+#  - pytorch
+ - nvidia
+ - defaults
+
+dependencies:
+  - python=3.8
+  - numpy
+  - pandas
+  - scipy
+  - jupyterlab
+  - matplotlib
+  - jupyter
+  - nb_conda
+  # - pytorch::pytorch
+  # - pytorch::torchvision
+  # - pytorch::torchaudio
+  # - pytorch::pytorch-cuda=11.8
+  # - tensorflow-gpu
+  - scikit-learn
+  - seaborn
+  - plotly
+  - ipywidgets
+  - pip
+  - pip:
+    - turicreate
