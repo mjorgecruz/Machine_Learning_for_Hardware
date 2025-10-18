@@ -4,6 +4,23 @@ WORKDIR /app
 
 COPY environment_coursera.yml /app/environment.yml
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libnss3 \
+    libatk-bridge2.0-0 \
+    libgtk-3-0 \
+    libgbm1 \
+    libx11-xcb1 \
+    libxcb-dri3-0 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    libxss1 \
+    libasound2 \
+    libpangocairo-1.0-0 \
+    libxshmfence1 \
+    xvfb && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN conda env create -f /app/environment.yml
 
 VOLUME ["/app"]
