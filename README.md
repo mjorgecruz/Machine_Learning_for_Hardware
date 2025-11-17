@@ -84,7 +84,3 @@ Machine_Learning_for_Hardware/
    ```bash
    docker build -t ml-hardware-project .
    ```
-
-
-test
-
