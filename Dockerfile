@@ -26,8 +26,16 @@ RUN conda env create -f /app/environment.yml
 VOLUME ["/app"]
 
 RUN echo "source activate ml_learning" > ~/.bashrc
-ENV PATH=/opt/conda/envs/ml_learnng/bin:$PATH
+ENV PATH=/opt/conda/envs/ml_learning/bin:$PATH
+
+# Generate Jupyter config and disable authentication
+RUN conda run -n ml_learning jupyter notebook --generate-config && \
+    echo "c.NotebookApp.token = ''" >> /root/.jupyter/jupyter_notebook_config.py && \
+    echo "c.NotebookApp.password = ''" >> /root/.jupyter/jupyter_notebook_config.py && \
+    echo "c.ServerApp.token = ''" >> /root/.jupyter/jupyter_notebook_config.py && \
+    echo "c.ServerApp.password = ''" >> /root/.jupyter/jupyter_notebook_config.py \
+    echo "c.IdentityProvider.token = ''" >> /root/.jupyter/jupyter_notebook_config.py
 
 EXPOSE 8888
 
-CMD ["conda", "run", "-n", "ml_learning", "jupyter", "notebook", "--notebook-dir=/app", "--ip='*'", "--port=8888", "--no-browser", "--allow-root"]
+CMD ["conda", "run", "-n", "ml_learning", "jupyter", "lab", "--notebook-dir=/app", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--ServerApp.token=''", "--ServerApp.password=''", "--IdentityProvider.token=''"]
